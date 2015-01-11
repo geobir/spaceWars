@@ -24,22 +24,23 @@ void	infoBar( Level level, int fps) {
 	std::cout << DARK_GRAY << "    Score: " << LIGHT_BLUE << level.getScore() << CCOLOR << std::endl;
 }
 
-int		inPut( Level level, int *x, int *y)
+int		inPut( Level level )
 {
 
 	int		c;
 
 	timeout(0);
 	c = getch();
-	
+	/*
 	if ( c == 'w' )
-		--*y;
+		level._player1->setY(level._player1->getY() - 1);
 	if ( c == 's' )
-		++*y;
+		level._player1->setY(level._player1->getY() + 1);
 	if ( c == 'a' )
-		--*x;
+		level._player1->setX(level._player1->getX() - 1);
 	if ( c == 'd' )
-		++*x;
+		level._player1->setX(level._player1->getX() + 1);
+	*/
 	if ( c == 32 )
 		;//tir
 	if ( c == 37 )
@@ -62,39 +63,21 @@ int		main( void )
 	time_t	last = time( NULL );
 	int		fps = 0;
 	int		cFps = 0;
-	Level		level(200, 50);
-	int			c;
+	Level	level(200, 50);
 
-	int	x = 5;
+	int	x = 5000;
 	int	y = 5;
-
-	initscr();
-	cbreak();
-	noecho();
-//	keypad(menu_win, TRUE);
 
 	while ( 42 )
 	{
-		now = time( NULL );
-		clear();
-		
-		if (now != last)
-		{
-			fps = cFps;
-			cFps = 0;
-		}
-		if (!inPut( level , &x, &y))
+		if (level.inPut())
 			break ;
-		infoBar( level , fps );
-		level.resetMap();
-		//level.putObj(x, y, 8, 7, "  /\\      \\ \\     /  \\  <|    )>  \\  /    / /     \\/    ");
+		//infoBar( level , fps );
+		//level.resetMap();
 		level.printMap();
-		
-		if (fps > 60 || cFps > 150)
-			usleep(5000);
-		last = now;
-		++cFps;
-		refresh();
+		//std::cout << "." ;
+//		if (fps > 60 || cFps > 150)
+//			usleep(5000);
 	}
 	return 0;
 

@@ -14,9 +14,11 @@
 # define LEVEL_CLASS_HPP
 
 # include <iostream>
+# include <sstream>
 
 # include <ncurses.h>
 # include <time.h>
+# include <unistd.h>
 
 # include "Player.hpp"
 
@@ -30,6 +32,7 @@ class Level {
 
 public:
 
+	Player		*_player1;
 
 	Level( void );
 	Level( int x, int y );
@@ -46,21 +49,25 @@ public:
 	void		setTime ( time_t cur );
 	int			getTime( void ) const;
 
-	void    resetMap( void );
-	void    printMap( void );
-	void	putObj(void *entity);
+	void		initMap( void );
+	void		drawInfoBar( void );
+	void		printMap( void );
+	int			inPut( void );
+	void		putObj(void *entity);
+
 
 
 private:
 	WINDOW		*_win;
-	time_t		_begin;
+	time_t		_beginTime;
 	time_t		_curTime;
+	time_t		_lastTime;
 	const int   _x;
 	const int   _y;
 	int			_score;
-	//std::string _map;
+	int			_fps;
+	int			_cur_fps;
 
-	Player		*_player1;
 	t_Entitys	*_entity;
 
 
