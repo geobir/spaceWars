@@ -18,7 +18,7 @@
 class	Enemy : public Entity
 {
 	public:
-		Enemy(int x, int y, int sizex, int sizey, int hp, int max_hp, int dam, std::string graph, int dir, float speed);
+		Enemy(int x, int y, int sizex, int sizey, int hp, int max_hp, int dam, std::string graph, int dir, float speed, int score);
 		Enemy(void);
 		Enemy(Enemy const &src);
 		~Enemy(void);

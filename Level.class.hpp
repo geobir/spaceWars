@@ -21,6 +21,7 @@
 # include <unistd.h>
 
 # include "Player.hpp"
+# include "Enemy.hpp"
 
 # include "Entitys.struct.hpp"
 # include "Color.define.hpp"
@@ -50,10 +51,12 @@ public:
 	int			getTime( void ) const;
 
 	void		initMap( void );
+	void		mouveEntitys( void );
+	void		colide( void );
 	void		drawInfoBar( void );
-	void		printMap( void );
+	int			printMap( void );
 	int			inPut( void );
-	void		putObj(void *entity);
+	void		putEnemy( Enemy *entity );
 
 
 
@@ -68,7 +71,7 @@ private:
 	int			_fps;
 	int			_cur_fps;
 
-	t_Entitys	*_entity;
+	t_Entitys	*_enemys;
 
 
 };

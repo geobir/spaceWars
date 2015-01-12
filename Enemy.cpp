@@ -12,12 +12,13 @@
 
 #include "Enemy.hpp"
 
-Enemy::Enemy(void) : Entity(_x, _y, _sizex, _sizey, _hp, _max_hp, _dam, _graph, _dir, _speed)
+Enemy::Enemy(void) : Entity(_x, _y, _sizex, _sizey, _hp, _max_hp, _dam, _graph, _dir, _speed, _score)
 {
 	return ;
 }
 
-Enemy::Enemy(int x, int y, int sizex, int sizey, int hp, int max_hp, int dam, std::string graph, int dir, float speed) : Entity(x, y, sizex, sizey, hp, max_hp, dam, graph, dir, speed)
+Enemy::Enemy(int x, int y, int sizex, int sizey, int hp, int max_hp, int dam, std::string graph, int dir, float speed, int score) :
+			Entity(x, y, sizex, sizey, hp, max_hp, dam, graph, dir, speed, score)
 {
 	return ;
 }

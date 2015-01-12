@@ -9,13 +9,13 @@ hero: 8 7
 this->_player1 = new Player( 3, 3, 8, 7, 5, 5, 1,"   /\\      \\ \\     /  \\  <|    )>  \\  /    / /     \\/   ", 0, 1.0, 50);
 
 
-ennemis 01:
+ennemis 01: 3 4
  /| 
 < |>
  \| 
 
  
-ennemis 02:
+ennemis 02: 3 3
  /}
 { >
  \}

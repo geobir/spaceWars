@@ -14,9 +14,11 @@
 #ifndef ENTITYS_STRUCT_HPP
 # define ENTITYS_STRUCT_HPP
 
+# include "Enemy.hpp"
+
 typedef struct			s_Entitys {
 
-	void				*entity;
+	Enemy				*enemy;
 	struct	s_Entitys	*next;
 	
 }						t_Entitys;

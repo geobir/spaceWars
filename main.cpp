@@ -24,38 +24,6 @@ void	infoBar( Level level, int fps) {
 	std::cout << DARK_GRAY << "    Score: " << LIGHT_BLUE << level.getScore() << CCOLOR << std::endl;
 }
 
-int		inPut( Level level )
-{
-
-	int		c;
-
-	timeout(0);
-	c = getch();
-	/*
-	if ( c == 'w' )
-		level._player1->setY(level._player1->getY() - 1);
-	if ( c == 's' )
-		level._player1->setY(level._player1->getY() + 1);
-	if ( c == 'a' )
-		level._player1->setX(level._player1->getX() - 1);
-	if ( c == 'd' )
-		level._player1->setX(level._player1->getX() + 1);
-	*/
-	if ( c == 32 )
-		;//tir
-	if ( c == 37 )
-		;//left
-	if ( c == 38 )
-		;//up
-	if ( c == 39 )
-		;//right
-	if ( c == 40 )
-		;//down
-	if (c == 27)
-		return 0;
-	return 1;
-}
-
 
 int		main( void )
 {
@@ -74,7 +42,8 @@ int		main( void )
 			break ;
 		//infoBar( level , fps );
 		//level.resetMap();
-		level.printMap();
+		if (level.printMap())
+			break ;
 		//std::cout << "." ;
 //		if (fps > 60 || cFps > 150)
 //			usleep(5000);

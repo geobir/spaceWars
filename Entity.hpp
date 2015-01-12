@@ -19,7 +19,7 @@ class	Entity
 {
 	
 	public:
-		Entity(int x, int y, int sizex, int sizey, int hp, int max_hp, int dam, std::string graph, int dir, float speed);
+		Entity(int x, int y, int sizex, int sizey, int hp, int max_hp, int dam, std::string graph, int dir, float speed, int score);
 		Entity(void);
 		Entity(Entity const &src);
 		~Entity(void);
@@ -37,6 +37,7 @@ class	Entity
 		float		getSpeed(void);
 		std::string	getGraph(void);
 		int			takeDamage(int	amount);
+		int			isHit(int x, int y, int sizeX, int sizeY);
 		//void		shoot(void);
 
 	protected:
@@ -50,6 +51,7 @@ class	Entity
 		std::string	_graph;
 		int			_dir;
 		float		_speed;
+		int			_score;
 };
 
 #endif

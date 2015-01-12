@@ -6,15 +6,15 @@
 #    By: bdismuke <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/01/10 15:28:26 by bdismuke          #+#    #+#              #
-#    Updated: 2015/01/10 23:01:09 by bdismuke         ###   ########.fr        #
+#    Updated: 2015/01/11 16:35:00 by bdismuke         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ft_retro
 
-SRC = Enemy.cpp main.cpp Leviathan.cpp DarkShadow.cpp Entity.cpp
+SRC = Enemy.cpp main.cpp Leviathan.cpp DarkShadow.cpp Entity.cpp Level.class.cpp Obstacle.cpp Player.cpp main.cpp
 
-INC = Enemy.hpp Leviathan.hpp DarkShadow.hpp Entity.cpp
+INC = Color.define.hpp Enemy.hpp Leviathan.hpp DarkShadow.hpp Entity.hpp Entitys.struct.hpp Level.class.hpp Obstacle.hpp Player.hpp
 
 OBJ = $(SRC:.cpp=.o)
 
